@@ -1,0 +1,32 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Image prise par {{itemInfo?.author}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card " >
+                <img class="img_fluid" [src]="imgSrc" [alt]="'Picture from '+itemInfo?.author" >
+                <div class="card-body">
+                <h5 class="card-title">{{itemId}}</h5>
+                <p>Sa largeur est de {{itemInfo?.width}} et sa hauteur est de {{itemInfo?.height}}</p>
+                <p>Pour la retrouver {{itemInfo?.download_url}}</p>
+                <p>{{itemInfo?.id}}</p>
+                <p>{{itemId}}</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a (click)="grayscale()" class="btn btn-primary text m-3">
+                      <span *ngIf="!gray">Gray Scale</span>
+                      <span *ngIf="gray">Color</span>
+                    </a>
+                    <a (click)="addBlur()" class="btn btn-primary text m-3"> 
+                        Add some blur ? {{blur}}
+                    </a>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+    
+    
+</section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-details',
@@ -9,9 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, public http:HttpClient) { }
+  constructor(public api:ApiService,
+    private route:ActivatedRoute) { }
 
-  itemId = '';
+  itemId = 0;
   itemInfo: any;
   imgSrc = '';
   gray = false;
@@ -24,23 +25,24 @@ export class DetailsComponent implements OnInit {
     
   }
 
-grayscale(){
-  this.gray = !this.gray;
-  this.generateSrc();
-  console.log(this.gray);
-}
+  grayscale(){
+    this.imgSrc = this.api.bigImgPicsum(this.itemId);
+    this.gray = !this.gray;
+    this.generateSrc();
+    console.log(this.gray);
+  }
 
-addBlur(){
-  this.blur <10 ? this.blur ++ : this.blur = 0;
-  this.generateSrc();
-}
+  addBlur(){
+    this.blur <10 ? this.blur ++ : this.blur = 0;
+    this.generateSrc();
+  }
 
 
 
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['itemId'];
     
-    this.http.get('https://picsum.photos/id/'+this.itemId+'/info').subscribe(
+    this.api.getUrl(this.api.imgInfo(this.itemId)).subscribe(
       data => { 
         this.itemInfo = data;
         this.generateSrc();

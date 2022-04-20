@@ -23,5 +23,13 @@ export class ApiService {
     return 'https://picsum.photos/id/' +id+ '/640/480';
   }
 
+  bigImgPicsum(id:number){
+    return 'https://picsum.photos/id/' +id+ '/1280/960';
+  }
+
+  imgInfo(id:number){
+    return 'https://picsum.photos/id/'+ id +'/info';
+  }
+
 
 }

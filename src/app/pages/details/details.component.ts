@@ -31,12 +31,11 @@ grayscale(){
 }
 
 addBlur(){
-  
   this.blur <10 ? this.blur ++ : this.blur = 0;
-
   this.generateSrc();
-
 }
+
+
 
   ngOnInit(): void {
     this.itemId = this.route.snapshot.params['itemId'];

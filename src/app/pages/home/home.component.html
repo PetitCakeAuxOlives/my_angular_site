@@ -6,8 +6,12 @@
     </div>
     <div class="row"> 
         <div class="col">
-            <img [src]=" 'assets/images/' + sourceImg" [alt]="title" class="img-fluid" (click)="changeImage()">
+            <div>
+                <img [src]=" 'assets/images/' + sourceImg" [alt]="title" class="img-fluid" (click)="changeImage()">
+            </div>
+            
         </div>
+            
         <div class="col">
             <p *ngIf="2 < 1; else otherParag">
                 CECI EST AFFICHE SOUS CONDITION
@@ -16,6 +20,7 @@
             <ng-template #otherParag>
                 <p>MON AUTRE PARAGRAPHE</p> 
             </ng-template>
+
 
             <div class="mt-3" [ngSwitch]="2">
                 <p *ngSwitchCase = "1">C'est 1 le case</p>

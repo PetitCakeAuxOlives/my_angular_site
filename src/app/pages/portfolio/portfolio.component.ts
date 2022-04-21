@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ViewportScroller } from '@angular/common';
-
 import { ApiService } from 'src/app/services/api.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-portfolio',

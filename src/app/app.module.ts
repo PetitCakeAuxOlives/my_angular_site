@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailsComponent } from './pages/details/details.component';
     HomeComponent,
     PortfolioComponent,
     ContactComponent,
-    DetailsComponent
+    DetailsComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

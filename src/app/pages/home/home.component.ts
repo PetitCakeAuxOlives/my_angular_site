@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(public settings:SettingsService) { }
 
   title = "Home";
 
@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.sourceImg);
+    this.settings.displayCarousel= true;
     this.changeImage();
   }
 

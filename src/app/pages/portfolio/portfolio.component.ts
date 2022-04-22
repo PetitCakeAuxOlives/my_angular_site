@@ -11,7 +11,8 @@ import { SettingsService } from 'src/app/services/settings.service';
 export class PortfolioComponent implements OnInit {
 
   constructor(private scroll:ViewportScroller,
-    public api:ApiService) { }
+    public api:ApiService,
+    public settings:SettingsService) { }
 
   joke:any;
   jokeNotFound = true;
@@ -52,5 +53,6 @@ export class PortfolioComponent implements OnInit {
      }
     )
     this.loadPics();
+    this.settings.displayCarousel= false;
     }
 }

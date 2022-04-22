@@ -33,7 +33,7 @@
 
     <div class="row"> 
         <div *ngFor="let pic of gallery" class="col-12 col-md-4 mb-2">
-            <div class="card">
+            <div data-aos="flip-up" class="card">
                 <a [routerLink]="'/portfolio/'+pic.id">
                     <img [src]="api.imgPicsum(pic.id)" class="card-img-top" [alt]="'Picture from '+pic.author">
                 </a>
